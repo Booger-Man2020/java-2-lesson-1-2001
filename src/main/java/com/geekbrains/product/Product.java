@@ -1,12 +1,11 @@
 package com.geekbrains.product;
 
 public class Product {
-    private static int price;
-    private static String name;
+    private  int price;
+    private  String name;
+    private  int quantity;
 
-    private static int quantity;
-
-    public static String getName() {
+    public  String getName() {
         return name;
     }
 
@@ -14,7 +13,7 @@ public class Product {
         this.name = name;
     }
 
-    public static int getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -22,11 +21,11 @@ public class Product {
         this.price = price;
     }
 
-    public static int getQuantity() {
+    public  int getQuantity() {
         return quantity;
     }
 
-    public static void setQuantity(int quantity) {
-        Product.quantity = quantity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
