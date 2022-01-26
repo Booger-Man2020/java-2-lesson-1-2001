@@ -28,7 +28,7 @@ public class Main {
         market.addSeller(secondSeller);
 
         Customer customer = createFirstCustomer();
-        Scanner s = new Scanner(System.in);
+//        Scanner s = new Scanner(System.in);
 //        System.out.println("Введите Имя продавца");
 //        String name = s.nextLine();
 //        System.out.println("Введите Фамилию продавца");
