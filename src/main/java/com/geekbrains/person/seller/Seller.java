@@ -17,38 +17,44 @@ public class Seller extends Person {
 
 
     public boolean sellProducts(Customer customer, Product expectedProduct) {
-        if (findSeller(name,lastName) != true) {
-        for (Seller sellers : sellers) {
-            for (Product product : products) {
+//        if((findSeller(name, lastName) == true)){
+//       for (Seller seller : sellers) {
+           for (Product product : products) {
+//               if (customer.findSeller(name, lastName) && product.equals(product.getName())) {
 
-                if (product.getName().equals(expectedProduct.getName())) {
-                    // Проверяем что количество товара >= чем мы хотим купить
-                    if (product.getQuantity() >= expectedProduct.getQuantity()) {
-                        // Проверяем что кэш покупателя позволяет купить товар
-                        long requiredCash = (long) product.getPrice() * expectedProduct.getQuantity();
-                        if (customer.getCash() >= requiredCash) {
-                            // Уменьшаем количество продукта у продавца
-                            product.setQuantity(product.getQuantity() - expectedProduct.getQuantity());
 
-                            //Создаем новый объект для покупателя, чтобы ссылка не дублировалась
-                            Product customerProduct = new Product();
-                            customerProduct.setQuantity(expectedProduct.getQuantity());
-                            customerProduct.setName(expectedProduct.getName());
+//               if (sellers.contains(product.getName())) {
+//
+                   if (product.getName().equals(expectedProduct.getName())) {
+                       // Проверяем что количество товара >= чем мы хотим купить
+                       if (product.getQuantity() >= expectedProduct.getQuantity()) {
+                           // Проверяем что кэш покупателя позволяет купить товар
+                           long requiredCash = (long) product.getPrice() * expectedProduct.getQuantity();
+                           if (customer.getCash() >= requiredCash) {
+                               // Уменьшаем количество продукта у продавца
+                               product.setQuantity(product.getQuantity() - expectedProduct.getQuantity());
 
-                            //Добавляем количество продуктов у покупателя
-                            customer.addPurchase(customerProduct);
-                            //Увеличиваем кэш продавца
-                            setCash(getCash() + requiredCash);
-                            //Уменьшаем кэш покупателя
-                            customer.setCash(customer.getCash() - requiredCash);
-                            //Сообщаем потребителю метода, что покупка совершена
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-        }return false;
+                               //Создаем новый объект для покупателя, чтобы ссылка не дублировалась
+                               Product customerProduct = new Product();
+                               customerProduct.setQuantity(expectedProduct.getQuantity());
+                               customerProduct.setName(expectedProduct.getName());
+
+                               //Добавляем количество продуктов у покупателя
+                               customer.addPurchase(customerProduct);
+                               //Увеличиваем кэш продавца
+                               setCash(getCash() + requiredCash);
+                               //Уменьшаем кэш покупателя
+                               customer.setCash(customer.getCash() - requiredCash);
+                               //Сообщаем потребителю метода, что покупка совершена
+                               return true;
+                           }
+                       }
+                   }
+               }
+
+
+
+        return false;
     }
 
     public String getName() {

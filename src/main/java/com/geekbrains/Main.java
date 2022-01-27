@@ -33,8 +33,8 @@ public class Main {
 //        String name = s.nextLine();
 //        System.out.println("Введите Фамилию продавца");
 //        String lastName= s.nextLine();
-        String name = "Виталий";
-        String lastName = "Еремин";
+        String name = "Алексей";
+        String lastName = "Ушаков";
         if (findSeller(name, lastName) != false) { // ищем продавца на рынке
             System.out.println("Продавец не найден =(");
 
@@ -48,11 +48,11 @@ public class Main {
     private static Customer createFirstCustomer() {
         Product firstProduct = new Product();
         firstProduct.setName(MarketConstants.TOMATOES_PRODUCT_NAME);
-        firstProduct.setQuantity(5);
+        firstProduct.setQuantity(4);
 
         Product secondProduct = new Product();
         secondProduct.setName(MarketConstants.CUCUMBER_PRODUCT_NAME);
-        secondProduct.setQuantity(2);
+        secondProduct.setQuantity(3);
 
         return new Customer(List.of(firstProduct, secondProduct), 50);
     }
@@ -65,12 +65,12 @@ public class Main {
 
         Product firstProduct = new Product();
         firstProduct.setName(MarketConstants.TOMATOES_PRODUCT_NAME);
-        firstProduct.setPrice(11);
-        firstProduct.setQuantity(2);
+        firstProduct.setPrice(5);
+        firstProduct.setQuantity(10);
 
         Product secondProduct = new Product();
         secondProduct.setName(MarketConstants.CUCUMBER_PRODUCT_NAME);
-        secondProduct.setPrice(8);
+        secondProduct.setPrice(5);
         secondProduct.setQuantity(10);
 
         List<Product> products = new ArrayList<>();
@@ -89,12 +89,12 @@ public class Main {
 
         Product firstProduct = new Product();
         firstProduct.setName(MarketConstants.TOMATOES_PRODUCT_NAME);
-        firstProduct.setPrice(8);
+        firstProduct.setPrice(10);
         firstProduct.setQuantity(40);
 
         Product secondProduct = new Product();
         secondProduct.setName(MarketConstants.CUCUMBER_PRODUCT_NAME);
-        secondProduct.setPrice(5);
+        secondProduct.setPrice(10);
         secondProduct.setQuantity(12);
 
         List<Product> products = new ArrayList<>();

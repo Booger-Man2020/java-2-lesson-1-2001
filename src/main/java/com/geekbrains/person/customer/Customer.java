@@ -25,13 +25,14 @@ public class Customer extends Person {
 
         purchaseList.add(product);
     }
-    public static boolean findSeller( String name, String lastName) {
-       if (Market.sellers.contains(name)&& Market.sellers.contains(lastName)){
-                return true;
-            }
-        return false;
-        }
 
+    public static boolean findSeller(String name, String lastName) {
+        if (Market.sellers.contains(name) && Market.sellers.contains(lastName)) {
+
+            return true;
+        }
+        return false;
+    }
 
 
     public void findProductOnMarket(Market market) {
@@ -50,7 +51,7 @@ public class Customer extends Person {
         if (purchaseList.size() == 0) {
             result.append("ничего");
         } else {
-            for(Product product: purchaseList) {
+            for (Product product : purchaseList) {
                 result.append(product.getName());
                 result.append(" в количестве ");
                 result.append(product.getQuantity());
